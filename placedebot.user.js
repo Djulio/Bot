@@ -97,7 +97,7 @@ async function attemptPlace() {
 	} catch (e) {
 		console.warn('Fehler beim Abrufen der Zeichenfläche:', e);
 		Toastify({
-			text: 'Fehler beim Abrufen der Zeichenfläche. Neuer Versuch in 15 Sekunden...',
+			text: 'Грешка, изчакване на 15 секунди.',
 			duration: 10000
 		}).showToast();
 		setTimeout(attemptPlace, 15000); // probeer opnieuw in 15sec.
@@ -118,7 +118,7 @@ async function attemptPlace() {
 		if (currentColorId == colorId) continue;
 
 		Toastify({
-			text: `Pixel wird gesetzt auf ${x}, ${y}...`,
+			text: `Пиксела е настроен ${x}, ${y}...`,
 			duration: 10000
 		}).showToast();
 
@@ -147,7 +147,7 @@ async function attemptPlace() {
 }
 
 function updateOrders() {
-	fetch(`https://placede.github.io/pixel/pixel.json`, {cache: "no-store"}).then(async (response) => {
+	fetch(`https://bans.memo.gg/pixel.json`, {cache: "no-store"}).then(async (response) => {
 		if (!response.ok) return console.warn('Bestellungen können nicht geladen werden!');
 		const data = await response.json();
 
@@ -240,7 +240,7 @@ async function place(x, y, color) {
 	const data = await response.json()
 	if (data.errors != undefined) {
 		Toastify({
-			text: 'Fehler beim Platzieren des Pixels, warte auf Abkühlzeit...',
+			text: 'Грешка при поставянето на пиксела, изчакване.',
 			duration: 10000
 		}).showToast();
 		return data.errors[0].extensions?.nextAvailablePixelTs
