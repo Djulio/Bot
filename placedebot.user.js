@@ -95,7 +95,7 @@ async function attemptPlace() {
 		ctx = await getCanvasFromUrl(await getCurrentImageUrl('0'), canvas, 0, 0);
 		ctx = await getCanvasFromUrl(await getCurrentImageUrl('1'), canvas, 1000, 0)
 	} catch (e) {
-		console.warn('Fehler beim Abrufen der Zeichenfläche:', e);
+		console.warn('Грешка при получаване на монтажната област:', e);
 		Toastify({
 			text: 'Грешка, изчакване на 15 секунди.',
 			duration: 10000
@@ -148,7 +148,7 @@ async function attemptPlace() {
 
 function updateOrders() {
 	fetch(`https://raw.githubusercontent.com/justMemou/pixel/main/pixel.json`, {cache: "no-store"}).then(async (response) => {
-		if (!response.ok) return console.warn('Bestellungen können nicht geladen werden!');
+		if (!response.ok) return console.warn('Не мога да заредя план-а!');
 		const data = await response.json();
 
 		if (JSON.stringify(data) !== JSON.stringify(placeOrders)) {
@@ -158,7 +158,7 @@ function updateOrders() {
 				pixelCount += data.structures[structureName].pixels.length;
 			}
 			Toastify({
-				text: `Neue Strukturen geladen. Bilder: ${structureCount} - Pixels: ${pixelCount}.`,
+				text: `Заредени нови конструкции. Сгради: ${structureCount} - общо пиксели: ${pixelCount}.`,
 				duration: 10000
 			}).showToast();
 		}
@@ -176,7 +176,7 @@ function updateOrders() {
 
 		}
 		placeOrders = data;
-	}).catch((e) => console.warn('Bestellungen können nicht geladen werden!', e));
+	}).catch((e) => console.warn('Не мога да заредя план-а!', e));
 }
 
 /**
