@@ -1,16 +1,16 @@
-# PlaceDE Bot
-Fork von PlaceNL Bot. Thanks guys!  
-Der Bot für PlaceDE! Dieser Bot holt automatisch alle paar Minuten [Pläne](https://github.com/placeDE/pixel), um zu verhindern, dass Bots miteinander kollidieren.
+# PlaceBG Bot
+Fork от бота на PlaceNL Bot. Thanks guys!  
+Бот за PlaceBG! На всеки няколко минути, ботът дърпа [плановете](https://github.com/placeDE/pixel), um zu verhindern, dass Bots miteinander kollidieren.
 
-## Installationsanweisungen
+## Инсталация
 
-Überprüfe, dass gerade neue Pixel plaziert werden können und dies nicht auf Cooldown ist
+Провери, че може да се поставя нов пиксел и не си на cooldown (нямаш течащ таймер отдолу)
 
-1. Installiere die Browsererweiterung [Tampermonkey](https://www.tampermonkey.net/) oder [Violentmonkey (Firefox)](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/).
-2. Klicke auf diesen Link: [https://github.com/PlaceDE/Bot/raw/main/placedebot.user.js](https://github.com/PlaceDE/Bot/raw/main/placedebot.user.js). Wenn alles gut geht, bietet Tampermonkey an, ein Benutzerskript zu installieren. Klicke auf **Installieren**.
-3. Lade den **r/place** Tab neu. Wenn alles gut gegangen ist, sollte "Abfrage des Zugriffstokens..." oben rechts auf dem Bildschirm zu sehen sein. Der Bot ist nun aktiv und wird diese Benachrichtigungen oben rechts für laufende Informationen nutzen.
+1. Инсталирай browser extension-на [Tampermonkey](https://www.tampermonkey.net/) или [Violentmonkey (Firefox)](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/).
+2. Отвори този линк: [https://github.com/justMemou/Bot/blob/main/placedebot.user.js](https://github.com/justMemou/Bot/blob/main/placedebot.user.js). Ако всичко е както трябва, Tampermonkey ще предложи да инсталира скрипта. Кликни на **Инсталирай**/**Install**.
+3. Отвори страницата или таба с **r/place**. Ако вече ти е отворена - презареди я (F5). Ако всичко е наред, ще видиш съобщенията от скрипта в горния десен ъгъл "Заявка за токен...". Това означава, че бота е активен и ще започне да поставя пиксели. Следи информацията в горния десен ъгъл, за да видиш какво прави скрипта.
 
-## Schwachstellen des Bots
+## Слабости на бота
 
-- Der Bot aktualisiert die Cooldown Nachricht nicht, so dass es aussieht als ob noch ein Pixel platziert werden kann. Der Bot hat das Pixel jedoch schon platziert und wartet nun auf den Cooldown.
-- Der Bot berücksichtigt eine bestehende Abklingzeit nicht und geht daher davon aus, dass man sofort einen Pixel platzieren kann, wenn man **r/place** öffnet. Im schlimmsten fall gehen so 5 Minuten verloren
+- Ботът не актуализира съобщението за cooldown-на, така че изглежда, че може да се постави друг пиксел. Въпреки това ботът вече е поставил пиксела и сега изчаква cooldown-на. При презареждане на страницата, можеш да видиш текущия cooldown.
+- Ботът не проверява дали имаш течащ cooldown! Затова преди да го стартираш, провери дали не ти тече таймерът. В най-лошия случай, ботът ще постави новия пиксел след 5 минути.

@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         PlaceDE Bot
+// @name         PlaceBG Bot
 // @namespace    https://github.com/PlaceDE/Bot
 // @version      14
-// @description  /r/place bot
+// @description  /r/place bot for Bulgarian art
 // @author       NoahvdAa, reckter, SgtChrome, nama17
 // @match        https://www.reddit.com/r/place/*
 // @match        https://new.reddit.com/r/place/*
@@ -15,7 +15,6 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
-// Sorry voor de rommelige code, haast en clean gaatn iet altijd samen ;)
 
 var placeOrders = [];
 var accessToken;
@@ -142,7 +141,7 @@ async function attemptPlace() {
 		setTimeout(attemptPlace, waitFor);
 		return;
 	}
-	
+
 	setTimeout(attemptPlace, 30000); // probeer opnieuw in 30sec.
 }
 
