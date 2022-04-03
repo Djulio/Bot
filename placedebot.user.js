@@ -147,7 +147,7 @@ async function attemptPlace() {
 }
 
 function updateOrders() {
-	fetch(`https://bans.memo.gg/pixel.json`, {cache: "no-store"}).then(async (response) => {
+	fetch(`https://raw.githubusercontent.com/justMemou/pixel/main/pixel.json`, {cache: "no-store"}).then(async (response) => {
 		if (!response.ok) return console.warn('Bestellungen können nicht geladen werden!');
 		const data = await response.json();
 
