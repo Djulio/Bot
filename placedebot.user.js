@@ -94,7 +94,7 @@ async function attemptPlace() {
 		ctx = await getCanvasFromUrl(await getCurrentImageUrl('0'), canvas, 0, 0);
 		ctx = await getCanvasFromUrl(await getCurrentImageUrl('1'), canvas, 1000, 0)
 	} catch (e) {
-		console.warn('Грешка при получаване на монтажната област:', e);
+		console.warn('Грешка при получаване на повърхността за рисуване:', e);
 		Toastify({
 			text: 'Грешка, изчакване на 15 секунди.',
 			duration: 10000
@@ -117,7 +117,7 @@ async function attemptPlace() {
 		if (currentColorId == colorId) continue;
 
 		Toastify({
-			text: `Пиксела е настроен ${x}, ${y}...`,
+			text: `Пиксела е настроен на позиция ${x}, ${y}...`,
 			duration: 10000
 		}).showToast();
 
@@ -135,19 +135,19 @@ async function attemptPlace() {
 		const minutes = Math.floor(waitFor / (1000 * 60))
 		const seconds = Math.floor((waitFor / 1000) % 60)
 		Toastify({
-			text: `Изчакване ${minutes}:${seconds} до ${new Date(nextAvailablePixelTimestamp).toLocaleTimeString()}`,
+			text: `Изчакване на таймер : ${minutes}м:${seconds}с, до ${new Date(nextAvailablePixelTimestamp).toLocaleTimeString()}`,
 			duration: waitFor
 		}).showToast();
 		setTimeout(attemptPlace, waitFor);
 		return;
 	}
 
-	setTimeout(attemptPlace, 30000); // probeer opnieuw in 30sec.
+	setTimeout(attemptPlace, 30000); // try again in 30 seconds
 }
 
 function updateOrders() {
 	fetch(`https://raw.githubusercontent.com/justMemou/pixel/main/pixel.json`, {cache: "no-store"}).then(async (response) => {
-		if (!response.ok) return console.warn('Не мога да заредя план-а!');
+		if (!response.ok) return console.warn('Не може да зареди плана!');
 		const data = await response.json();
 
 		if (JSON.stringify(data) !== JSON.stringify(placeOrders)) {
@@ -175,7 +175,7 @@ function updateOrders() {
 
 		}
 		placeOrders = data;
-	}).catch((e) => console.warn('Не мога да заредя план-а!', e));
+	}).catch((e) => console.warn('Не може да зареди плана!', e));
 }
 
 /**
