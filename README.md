@@ -1,6 +1,6 @@
 # PlaceBG Bot
 Fork от бота на PlaceNL Bot. Thanks guys!  
-Бот за PlaceBG! На всеки няколко минути, ботът дърпа [плановете](https://github.com/placeDE/pixel), um zu verhindern, dass Bots miteinander kollidieren.
+Бот за PlaceBG! На всеки няколко минути, ботът дърпа [плановете](https://github.com/placeDE/pixel), за да обновява пикселите спрямо зададените картинки.
 
 ## Инсталация
 

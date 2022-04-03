@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         PlaceBG Bot
-// @namespace    https://github.com/PlaceDE/Bot
+// @namespace    https://github.com/justMemou/Bot
 // @version      14
 // @description  /r/place bot for Bulgarian art
 // @author       NoahvdAa, reckter, SgtChrome, nama17
@@ -9,8 +9,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
 // @require	     https://cdn.jsdelivr.net/npm/toastify-js
 // @resource     TOASTIFY_CSS https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css
-// @updateURL    https://github.com/PlaceDE/Bot/raw/main/placedebot.user.js
-// @downloadURL  https://github.com/PlaceDE/Bot/raw/main/placedebot.user.js
+// @updateURL    https://github.com/justMemou/Bot/raw/main/placedebot.user.js
+// @downloadURL  https://github.com/justMemou/Bot/raw/main/placedebot.user.js
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // ==/UserScript==
